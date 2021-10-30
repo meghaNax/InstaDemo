@@ -1,0 +1,72 @@
+ext {
+
+    appVersion = [
+            minSdk    : 23,
+            targetSdk : 29,
+            compileSdk: 29
+    ]
+
+    androidLibsVersion = [
+            retrofitVersion            : "2.9.0",
+            koinVersion                : "2.1.6",
+            okhttp3Version             : "4.7.2",
+            swipeRefreshLayoutVersion  : "1.1.0",
+            coreKtxVersion             : "1.3.2",
+            appcompatVersion           : "1.2.0",
+            materialVersion            : "1.3.0",
+            kotlinStdLibVersion        : "1.2.1",
+            constraintVersion          : "2.0.4",
+            coroutinesVersion          : "1.4.0",
+            glideVersion               : "4.12.0",
+            lifecycleViewModelVersion  : "2.2.0",
+            kotlinxSerializationVersion: "1.0.1",
+            imagePickerVersion         : "v1.1.2",
+            materialDateTimeVersion    : "4.2.3",
+            navVersion                 : "2.3.5",
+            gsonVersion                : "2.8.8"
+    ]
+
+    pluginsVersion = [
+            kotlinVersion             : "1.4.31",
+            gradleToolsVersion        : '4.1.1',
+            googleServicesVersion     : '4.3.8',
+            firebaseCrashlyticsVersion: '2.4.1',
+            kotlinSerializationVersion: '1.5.31',
+            navigationPluginVersion   : '2.4.0-alpha02'
+    ]
+
+    androidPlugins = [
+            navigation         : "androidx.navigation:navigation-safe-args-gradle-plugin:${pluginsVersion.navigationPluginVersion}",
+            kotlin             : "org.jetbrains.kotlin:kotlin-gradle-plugin:${pluginsVersion.kotlinVersion}",
+            gradle             : "com.android.tools.build:gradle:${pluginsVersion.gradleToolsVersion}",
+            kotlinSerialization: "org.jetbrains.kotlin:kotlin-serialization:${pluginsVersion.kotlinSerializationVersion}"
+    ]
+
+    androidLibs = [
+            material                : "com.google.android.material:material:${androidLibsVersion.materialVersion}",
+            lifecycleViewModel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidLibsVersion.lifecycleViewModelVersion}",
+            constraint              : "com.android.support.constraint:constraint-layout:${androidLibsVersion.constraintVersion}",
+            appcompat               : "androidx.appcompat:appcompat:${androidLibsVersion.appcompatVersion}",
+            androidXMedia           : "androidx.media:media:${androidLibsVersion.appcompatVersion}",
+            coreKtx                 : "androidx.core:core-ktx:${androidLibsVersion.coreKtxVersion}",
+            swipeRefreshLayout      : "androidx.swiperefreshlayout:swiperefreshlayout:${androidLibsVersion.swipeRefreshLayoutVersion}",
+            kotlinStdLib            : "org.jetbrains.kotlin:kotlin-stdlib:${pluginsVersion.kotlinVersion}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${androidLibsVersion.retrofitVersion}",
+            retrofitConverter       : "com.squareup.retrofit2:converter-gson:${androidLibsVersion.retrofitVersion}",
+            retrofitRxAdapter       : "com.squareup.retrofit2:adapter-rxjava2:${androidLibsVersion.retrofitVersion}",
+            koinViewModel           : "org.koin:koin-androidx-viewmodel:${androidLibsVersion.koinVersion}",
+            koinJava                : "org.koin:koin-java:${androidLibsVersion.koinVersion}",
+            koinAndroid             : "org.koin:koin-android:${androidLibsVersion.koinVersion}",
+            koinExt                 : "org.koin:koin-android-ext:${androidLibsVersion.koinVersion}",
+            okhttp3LogInterceptor   : "com.squareup.okhttp3:logging-interceptor:${androidLibsVersion.okhttp3Version}",
+            coroutines              : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${androidLibsVersion.coroutinesVersion}",
+            glide                   : "com.github.bumptech.glide:glide:${androidLibsVersion.glideVersion}",
+            glideCompiler           : "com.github.bumptech.glide:compiler:${androidLibsVersion.glideVersion}",
+            kotlinxSerializationJson: "org.jetbrains.kotlinx:kotlinx-serialization-json:${androidLibsVersion.kotlinxSerializationVersion}",
+            imagePicker             : "com.kroegerama.imgpicker:kroegeramaImagePicker:${androidLibsVersion.imagePickerVersion}@aar",
+            navigationFragments     : "androidx.navigation:navigation-fragment-ktx:${pluginsVersion.navigationPluginVersion}",
+            navigationUI            : "androidx.navigation:navigation-ui-ktx:${pluginsVersion.navigationPluginVersion}",
+            navigationRuntime       : "androidx.navigation:navigation-runtime-ktx:${pluginsVersion.navigationPluginVersion}",
+            gson                    : "com.google.code.gson:gson:${androidLibsVersion.gsonVersion}"
+    ]
+}

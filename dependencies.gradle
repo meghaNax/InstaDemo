@@ -14,7 +14,7 @@ ext {
             coreKtxVersion             : "1.3.2",
             appcompatVersion           : "1.2.0",
             materialVersion            : "1.3.0",
-            kotlinStdLibVersion        : "1.2.1",
+            kotlinStdLibVersion        : "1.5.31",
             constraintVersion          : "2.0.4",
             coroutinesVersion          : "1.4.0",
             glideVersion               : "4.12.0",
@@ -27,10 +27,8 @@ ext {
     ]
 
     pluginsVersion = [
-            kotlinVersion             : "1.4.31",
-            gradleToolsVersion        : '4.1.1',
-            googleServicesVersion     : '4.3.8',
-            firebaseCrashlyticsVersion: '2.4.1',
+            kotlinVersion             : "1.5.31",
+            gradleToolsVersion        : '7.0.3',
             kotlinSerializationVersion: '1.5.31',
             navigationPluginVersion   : '2.4.0-alpha02'
     ]

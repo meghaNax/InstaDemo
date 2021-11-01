@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.feed.FeedFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.app.feeds.ui.feed.FeedViewModel" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_20"
+            android:layout_marginTop="@dimen/grid_20"
+            android:layout_marginEnd="@dimen/grid_20"
+            android:background="@drawable/grey_bg"
+            android:padding="@dimen/grid_5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/filterTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:hint="@string/cari_feed"
+                android:text="@string/cari_feed"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/btnSearch"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="@dimen/grid_35"
+                android:layout_height="@dimen/grid_35"
+                android:src="@drawable/ic_baseline_search_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/filterbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_10"
+            android:layout_marginEnd="@dimen/grid_20"
+            android:background="@drawable/orange_bg_curve"
+            android:drawableLeft="@drawable/ic_baseline_filter_alt_24"
+            android:text="Filter"
+
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_lay" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/grid_20"
+            android:layout_marginEnd="@dimen/grid_20"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/filterbtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

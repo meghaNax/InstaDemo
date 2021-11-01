@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="feedItem"
+            type="com.app.feeds.data.domain.entity.FeedItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/startingl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/grid_60"
+                android:layout_height="@dimen/grid_60"
+                android:background="@drawable/circle_image_view"
+                android:src="@drawable/profile_dummy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circleImageView" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{feedItem.from.name}"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 April 2021"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{feedItem.message}"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/startingl" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/grid_10"
+            android:orientation="horizontal"
+            app:layout_constraintDimensionRatio="W,1:1"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_20"
+            android:layout_marginRight="@dimen/grid_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewPager">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="@dimen/grid_35"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_round_whote_bg"
+                android:gravity="center"
+                android:text="1/2"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlue"
+            android:padding="@dimen/grid_10"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/viewPager">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Sekarang"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:layout_width="@dimen/grid_30"
+                android:layout_height="@dimen/grid_30"
+                android:background="@color/transaprent"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/grid_10"
+            app:layout_constraintTop_toBottomOf="@id/order">
+
+            <ImageButton
+                android:id="@+id/like"
+                android:layout_width="@dimen/grid_24"
+                android:layout_height="@dimen/grid_24"
+                android:background="@color/transaprent"
+                android:src="@drawable/ic_baseline_favorite_24"
+                android:tint="@color/bottom_navigation_color_selector"
+                bind:isSelected="@{feedItem.liked}" />
+
+            <TextView
+                android:id="@+id/like_count_Txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:layout_toEndOf="@id/like"
+                android:text="100"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/bookmark"
+                android:layout_width="@dimen/grid_24"
+                android:layout_height="@dimen/grid_24"
+                android:layout_marginStart="@dimen/grid_10"
+                android:layout_toEndOf="@id/like_count_Txt"
+                android:background="@color/transaprent"
+                android:src="@drawable/ic_baseline_bookmark_24"
+                android:tint="@color/bottom_navigation_color_selector"
+                bind:isSelected="@{feedItem.bookMarked}" />
+
+            <TextView
+                android:id="@+id/comment_Txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/grid_2"
+                android:layout_toEndOf="@id/bookmark"
+                android:text="BookMark"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone" />
+
+
+            <ImageButton
+                android:id="@+id/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@color/transaprent"
+                android:src="@drawable/ic_baseline_share_24" />
+
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
